@@ -1,0 +1,88 @@
+= Pratique git et GitHub
+
+== Comment ajouter un repo local à GitHub
+
+https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github
+
+----
+Section à utiliser :
+Adding a local repository to GitHub using Git
+Étapes :
+    1. Créer le repository sur GitHub
+    2. Aller en terminal
+    3. Aller dans le répertoire voulu de notre poste
+    4. Si ce n’est pas déjà fait, faire git init pour créer un repository de ce répertoire
+    5. Si nécessaire, ajouter les fichiers avec git add
+    6. Faire un git commit
+    7. Copier l’URL externe indiquée lors de la création du repository dans GitHub
+    8. Faire remote add origin adresse_externe obtenue en 7.
+    9. Faire git remote -v pour vérifier la présence du nouveau remote
+    10. Faire git push origin main pour envoyer le repo local vers le remote
+Par la suite, fait git push de la même façon après chaque git commit
+
+
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ ls -l
+total 4
+-rw-rw-r-- 1 guy guy 8 Nov  2 20:29 fichier.txt
+-rw-rw-r-- 1 guy guy 0 Sep  2 17:39 fichier_vide.txt
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git init
+Initialized empty Git repository in /home/guy/ApprendreGIT/testgit/.git/
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	fichier.txt
+	fichier_vide.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git add *.txt
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   fichier.txt
+	new file:   fichier_vide.txt
+
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git commit -m "Commit initial"
+[main (root-commit) 79c3f34] Commit initial
+ 2 files changed, 1 insertion(+)
+ create mode 100644 fichier.txt
+ create mode 100644 fichier_vide.txt
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git status
+On branch main
+nothing to commit, working tree clean
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ 
+
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git remote add origin https://github.com/GuyNicol/testgit.git
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git remote -v
+origin	https://github.com/GuyNicol/testgit.git (fetch)
+origin	https://github.com/GuyNicol/testgit.git (push)
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ git push origin main
+Username for 'https://github.com': Guy Nicol
+Password for 'https://Guy Nicol@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 268 bytes | 268.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GuyNicol/testgit.git
+ * [new branch]      main -> main
+guy@guy-Aspire-TC-220:~/ApprendreGIT/testgit$ 
+
+
+
+Modifié le fichier fichier.txt
+Fait git add du fichier
+Fait git commit
+Fait git push
+
+
+
+----
