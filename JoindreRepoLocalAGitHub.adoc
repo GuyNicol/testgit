@@ -15,7 +15,7 @@ Adding a local repository to GitHub using Git
     5. Si nécessaire, ajouter les fichiers avec git add
     6. Faire un git commit
     7. Copier l’URL externe indiquée lors de la création du repository dans GitHub
-    8. Faire remote add origin adresse_externe obtenue en 7.
+    8. Faire git remote add origin adresse_externe obtenue en 7.
     9. Faire git remote -v pour vérifier la présence du nouveau remote
     10. Faire git push origin main pour envoyer le repo local vers le remote
 Par la suite, fait git push de la même façon après chaque git commit
